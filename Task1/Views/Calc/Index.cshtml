@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>Simple Calculator</h2>
+@using (Html.BeginForm("Calculate", "Calc", FormMethod.Post))
+{
+    @Html.TextBox("firstNumber", null, new { placeholder = "Enter first number", required = "required" })
+    <select name="operation">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+    </select>
+    @Html.TextBox("secondNumber", null, new { placeholder = "Enter second number", required = "required" })
+    <input type="submit" value="Calculate" />
+}
+
+@if (ViewBag.Result != null)
+{
+    <h4>Result: @ViewBag.Result</h4>
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <p style="color: red;">@ViewBag.ErrorMessage</p>
+}
