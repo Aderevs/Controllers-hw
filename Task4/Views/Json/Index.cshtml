@@ -1,0 +1,69 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        <a asp-action="clientinfo">Test Controller Method</a>
+    </p>
+
+    <button id="button">JS Client</button>
+
+    @* <p>Id: <span id="idspan"></span></p>
+    <p>Login: <span id="loginspan"></span></p>
+    <p>Email: <span id="emailspan"></span></p> *@
+
+    <script>
+        let btn = document.querySelector("#button");
+        let xhr = new XMLHttpRequest();
+
+        btn.addEventListener("click", () => {
+            xhr.open("GET", "/json/clientinfo");
+            xhr.onload = () => {
+                const response = JSON.parse(xhr.response);
+
+                const table = document.createElement('table');
+                table.style.border = '1px solid black'; 
+                const headerRow = document.createElement('tr');
+                const firstObject = response[0];
+
+                for (const key in firstObject) {
+                    if (Object.hasOwnProperty.call(firstObject, key)) {
+                        const th = document.createElement('th');
+                        th.textContent = key;
+                        th.style.border = '1px solid black'; 
+                        headerRow.appendChild(th);
+                    }
+                }
+
+                table.appendChild(headerRow);
+
+                response.forEach(obj => {
+                    const row = document.createElement('tr');
+                    for (const key in obj) {
+                        if (Object.hasOwnProperty.call(obj, key)) {
+                            const td = document.createElement('td');
+                            td.textContent = obj[key];
+                            td.style.border = '1px solid black';
+                            row.appendChild(td);
+                        }
+                    }
+                    table.appendChild(row);
+                });
+
+                document.body.appendChild(table);
+            }
+            xhr.send();
+        })
+    </script>
+</body>
+</html>

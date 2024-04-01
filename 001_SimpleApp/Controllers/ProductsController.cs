@@ -37,9 +37,9 @@ namespace SimpleApp.Controllers
         }
 
         // Products/Details/1
-        public IActionResult Details(int? id)
+        public IActionResult Details(int id)
         {
-            id = (int?)RouteData.Values["id"] ?? 0;
+            //id = (int?)RouteData.Values["id"] ?? 0;
             List<Product> products = _reader.ReadFromFile();
             Product product = products.Where(x => x.Id == id).FirstOrDefault();
 
