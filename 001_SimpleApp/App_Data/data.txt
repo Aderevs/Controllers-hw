@@ -1,0 +1,7 @@
+﻿1, Mobile Phone, 600, device you can use almost for anything but it was developed for calling, 8, mobile
+2, Laptop, 3200, proteble computer that let you work in almost any place you want, 6, pc
+3, Tablet, 2800, thing that you use to chill in the evening while surfing the internet with big screen, 3, mobile
+4, Keyboard, 35, you can use it for typing text in computer you prefer higher quality one if you want to go in cybersport but not too expencuve if you have problem with agression, 50, pc
+5, Mouse, 10, if you work at the computer too much you should get the right mouse to spend that time with better, 64, pc
+6, Pen, 1, Sell me that pen!, 0, office
+7, Notebook, 1, Please write my name on the first page, 7, office

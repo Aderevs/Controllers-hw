@@ -1,0 +1,41 @@
+﻿@model SimpleApp.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    @* <link href="~/styles.css" rel="stylesheet" /> *@
+    <link rel="stylesheet" href="/css/site.css"/>
+</head>
+<body>
+    <h2>Деталі</h2>
+    <table>
+        <tr>
+            <td class="field-name">Id</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td class ="field-name">Назва</tdc>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td class="field-name">Ціна</td>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <td class="field-name">Лишилося на складі:</td>
+            <td>@Model.Quantity</td>
+        </tr>
+        <tr>
+            <td class="field-name">Опис</td>
+            <td>@Model.Description</td>
+        </tr>
+
+    </table>
+</body>
+</html>
