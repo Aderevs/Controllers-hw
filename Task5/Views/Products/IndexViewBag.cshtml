@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Properties:</h1>
+<div>
+    <p>Count: @ViewBag.Count</p>
+
+    <p>Ids:
+    @foreach (var id in ViewBag.ItemsIds)
+    {
+        <span>| @id |</span>
+    }
+    </p>
+
+    <p>Prices:
+    @foreach (var price in ViewBag.ItemsPrices)
+    {
+        <span>| @price |</span>
+    }
+    </p>
+
+    <p>Names:
+    @foreach (var name in ViewBag.ItemsNames)
+    {
+        <span>| @name |</span>
+    }
+    </p>
+</div>
+

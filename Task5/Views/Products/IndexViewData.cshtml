@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Properties:</h1>
+<div>
+    <p>Count: @ViewData["count"]</p>
+
+    <p>
+        Ids:
+        @foreach (var id in (List<int>)ViewData["items' ids"])
+        {
+            <span>| @id |</span>
+        }
+    </p>
+
+    <p>
+        Prices:
+        @foreach (var price in (List<double>)ViewData["items' prices"])
+        {
+            <span>| @price |</span>
+        }
+    </p>
+
+    <p>
+        Names:
+        @foreach (var name in (List<string>)ViewData["items' names"])
+        {
+            <span>| @name |</span>
+        }
+    </p>
+</div>
